@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+ public titulo: string = 'Control de Gastos'
+ public bienvenida: string = 'Bienvenido'
+ public configuracion: string = 'Configuración'
   constructor() { }
 
   ngOnInit(): void {

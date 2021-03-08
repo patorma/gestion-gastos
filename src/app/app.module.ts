@@ -6,30 +6,32 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
-import { GastosComponent } from './components/gastos/gastos.component';
+import { environment } from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule, SETTINGS} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FormsModule } from '@angular/forms';
 
-import { NotasComponent } from './components/notas/notas.component';
-import { EditarNotaComponent } from './components/editar-nota/editar-nota.component';
 
 
-import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NoEncontradoComponent,
-    GastosComponent,
-    NotasComponent,
-    EditarNotaComponent,
-    UsuariosComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firestore,'control-clientes'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

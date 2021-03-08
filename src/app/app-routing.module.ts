@@ -33,6 +33,18 @@ const routes: Routes = [
   {
     path: 'notaNueva', loadChildren:() =>
     import('./components/registro2/registro2.module').then(m => m.Registro2Module)
+  },
+  {
+    path:'nota/editar/:id',loadChildren: () =>
+    import('./components/editar-nota/editar-nota.module').then(m => m.EditarNotaModule)
+  },
+  {
+     path: 'usuarios',loadChildren: () =>
+     import('./components/usuarios/usuarios.module').then(m => m.UsuariosModule) 
+  },
+  {
+    path: '**',loadChildren: () =>
+    import('./components/no-encontrado/no-encontrado.module').then(m => m.NoEncontradoModule)
   }
 ];
 
