@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,10 @@ import {AngularFirestoreModule, SETTINGS} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FormsModule } from '@angular/forms';
+import localeEs from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
 
+registerLocaleData(localeEs,'es')
 
 
 
@@ -21,6 +24,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    
+   
    
   ],
   imports: [
@@ -33,7 +38,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

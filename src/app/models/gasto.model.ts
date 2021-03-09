@@ -3,10 +3,9 @@ export interface Gasto {
     id: string;
     nombre: string;
     descripcion: string;
-    cantidad: number;
     valor: number;
     nombreLocal: string;
     ciudad: string;
-    fecha: string;
+    fecha_gasto: string;
     tipo: Tipos;
 }
